@@ -1,5 +1,5 @@
 OrfGet - A ORF tvthek (http://tvthek.orf.at/) video url extractor
 
-### Usage ###
+#### Usage ####
 
 ./orfget.sh <tvthekurl>
