@@ -17,6 +17,11 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
+if [ $# -ne 1 ]; then
+  echo "Usage: orfget.sh <videothekurl>"
+  exit 1
+fi
+
 ASX_URL="http://tvthek.orf.at`wget -O - -q "$1" | grep -oh "\/.*download.asx" `"
 MMS="`wget -O - -q "$ASX_URL" |  grep -oh 'mms:[^\"]*' `" 
 MMS_URL=`echo $MMS | sed -e 's/\s\+/\r\n/g'`
