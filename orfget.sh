@@ -26,4 +26,3 @@ ASX_URL="http://tvthek.orf.at`wget -O - -q "$1" | grep -oh "\/.*download.asx" `"
 MMS="`wget -O - -q "$ASX_URL" |  grep -oh 'mms:[^\"]*' `" 
 MMS_URL=`echo $MMS | sed -e 's/\s\+/\r\n/g'`
 echo "$MMS_URL"
-echo "orf"
