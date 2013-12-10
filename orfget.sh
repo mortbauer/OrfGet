@@ -18,7 +18,7 @@
 #
 
 if [ $# -ne 1 ]; then
-  echo "Usage: orfget.sh <videothekurl>"
+  echo "Usage: orfget.sh <tvthekurl>"
   exit 1
 fi
 
