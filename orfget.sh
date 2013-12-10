@@ -22,8 +22,6 @@ if [ $# -ne 1 ]; then
   exit 1
 fi
 
-ASX_URL="http://tvthek.orf.at`wget -O - -q "$1" | grep -oh "\/.*download.asx" `"
-MMS="`wget -O - -q "$ASX_URL" |  grep -oh 'mms:[^\"]*' `" 
-MMS_URL=`echo $MMS | sed -e 's/\s\+/\r\n/g'`
-echo "$MMS_URL"
-echo "orf"
+
+wget -q -O /dev/stdout $1 | grep -o 'rtmp:\\/\\/[0-9a-zA-Z.\-]*/[0-9a-zA-Z.\-]*/[-0-9a-zA-Z_:]*.3gp'
+
