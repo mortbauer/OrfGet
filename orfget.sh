@@ -22,6 +22,5 @@ if [ $# -ne 1 ]; then
   exit 1
 fi
 
-
 wget -q -O /dev/stdout $1 | grep -o 'rtmp:\\/\\/[0-9a-zA-Z.\-]*/[0-9a-zA-Z.\-]*/[-0-9a-zA-Z_:]*.3gp'
 
